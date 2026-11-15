@@ -39,6 +39,7 @@ public static class CreateVRBoxScene
         var demo=root.AddComponent<VRBoxDemo>();
         demo.dancer=dancer.transform; demo.headPivot=head.transform; demo.leftEye=leftCamera;
         demo.rightEye=rightCamera; demo.audioSource=audio;
+        var gazeMenu=root.AddComponent<VRBoxGazeMenu>(); gazeMenu.game=demo; gazeMenu.head=head.transform;
         RenderSettings.ambientLight=new Color(.3f,.3f,.45f);
         System.IO.Directory.CreateDirectory("Assets/Scenes");
         EditorSceneManager.SaveScene(scene,"Assets/Scenes/VRDanceParty_FirstScene.unity");
